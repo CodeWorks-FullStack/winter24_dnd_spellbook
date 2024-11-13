@@ -8,7 +8,7 @@ export class SandboxController {
   constructor() {
     console.log('🥪🎮');
     // this.fetchSandboxSpells() // asking for this user's spells immediately is too quick, and we get a 401
-    AppState.on('account', this.fetchSandboxSpells) // we need this fetch to listen for the account, so it only happens AFTER someone is logged in
+    AppState.on('account', this.fetchSandboxSpells) // we need  to listen for the account, so it only fetches AFTER someone is logged in.
     AppState.on('mySpells', this.drawSandboxSpellList)
   }
 
@@ -44,6 +44,7 @@ export class SandboxController {
     }
   }
 
+  // NOTE this does not need to be async because the spells from the sandbox are detailed spells
   setActiveSpell(spellId) {
     sandboxService.setActiveSpell(spellId)
   }

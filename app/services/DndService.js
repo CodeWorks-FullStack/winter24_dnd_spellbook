@@ -17,7 +17,6 @@ class DndService {
     // REVIEW errors that could be caught
     // // console.log(x) 
     // throw new Error("😱")
-
     // const response = await api.get('https://www.dnd5eapi.co/api/spells')
     const response = await dndApi.get('spells')
     console.log('🐉📜📡', response.data); // You will always have response.data
@@ -29,6 +28,8 @@ class DndService {
 
   }
 
+  // NOTE takes in the unique identifier of the spell, and sends a get request to get ONE, spell
+  // ...api/spells/acid-arrow
   async fetchActiveSpell(spellIndex) {
     const response = await dndApi.get(`spells/${spellIndex}`)
     // console.log('👉📜📡', response.data);

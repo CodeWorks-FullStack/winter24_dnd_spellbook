@@ -18,10 +18,11 @@ export class DndController {
       await dndService.fetchSpells()
     } catch (error) {
       console.error(error) // every catch should report to the console
-      Pop.toast("Oh no! could not learn of the magic ways", 'error')
+      Pop.toast("Oh no! could not learn of the magic ways", 'error') // and report to the user
     }
   }
 
+  // NOTE take the unique identifier of the spell, and send it to the service
   async fetchActiveSpell(spellIndex) {
     try {
       console.log('👉📜', spellIndex);
@@ -32,6 +33,7 @@ export class DndController {
     }
   }
 
+  // NOTE this still works, but is replaced with the setHTML version
   // drawSpellList() {
   //   console.log('✏️📜');
   //   const spellListElm = document.getElementById('spell-list')

@@ -5,13 +5,13 @@ import { createObservableProxy } from './utils/ObservableProxy.js'
 class ObservableAppState extends EventEmitter {
 
 
-  /** @type {Spell[]} */
+  /** @type {Spell[]} spells from the dnd API */
   spells = []
 
-  /** @type {DetailedSpell} */
+  /** @type {DetailedSpell} the spell displayed in the center of the page*/
   activeSpell = null
 
-  /** @type {DetailedSpell[]} */
+  /** @type {DetailedSpell[]} spells you have saved to your own spell book*/
   mySpells = []
 
   user = null
